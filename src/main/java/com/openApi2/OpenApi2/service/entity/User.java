@@ -20,16 +20,6 @@ public class User {
         this.id = UUID.randomUUID().toString(); // Genera un UUID único y lo asigna como el id
     }
 
-/*
-    public User(String first_name, String second_name, String first_surname, String email) {
-        this.id = UUID.randomUUID().toString(); // Genera un UUID único y lo asigna como el id
-        this.first_name = first_name;
-        this.second_name = second_name;
-        this.first_surname = first_surname;
-        this.email = email;
-
-
-    }*/
     // Getters y setters
 
     public String getId() {
