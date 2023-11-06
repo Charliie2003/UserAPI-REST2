@@ -43,8 +43,9 @@ public class UserService {
                 throw new UserNotFoundException();
             }
         } catch (HttpClientErrorException.NotFound e) {
-            throw new UserNotFoundException();
+            return null;
         }
+
     }
 
     public User getUserById(String idUser) {
@@ -53,7 +54,7 @@ public class UserService {
 
         // Si el usuario no se encuentra en la API en el puerto 8080, intenta buscarlo en 8081
         if (user == null) {
-            user = coachRepository.findById(idUser).orElseThrow(UserNotFoundException::new);
+            user = coachRepository.findById(idUser).orElse(null);
         }
 
         // Si el usuario se encuentra en la API en el puerto 8080 y no existe en el 8081, guárdalo en el 8081
