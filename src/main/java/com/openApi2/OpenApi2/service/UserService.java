@@ -34,7 +34,7 @@ public class UserService {
     public User getUserByIdFrom8080(String idUser) {
         String url = baseUrl8080 + idUser;
 
-        try {
+
             ResponseEntity<User> response = restTemplate.exchange(url, HttpMethod.GET, null, User.class);
 
             if (response.getStatusCode() == HttpStatus.OK) {
@@ -42,10 +42,6 @@ public class UserService {
             } else {
                 throw new UserNotFoundException();
             }
-        } catch (HttpClientErrorException.NotFound e) {
-            return null;
-        }
-
     }
 
     public User getUserById(String idUser) {

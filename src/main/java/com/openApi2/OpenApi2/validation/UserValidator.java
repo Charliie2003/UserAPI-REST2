@@ -18,7 +18,7 @@ public class UserValidator {
         return true;
 
     }
-    private boolean containsInvalidString(String str) {
+    boolean containsInvalidString(String str) {
         return str != null && str.trim().equalsIgnoreCase("string");
     }
 }
